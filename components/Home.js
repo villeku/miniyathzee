@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Text, View, TextInput, Keyboard, Pressable } from 'react-native'
+import { Text, View, TextInput, Keyboard, Pressable, ScrollView } from 'react-native'
 import styles from '../style/style'
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import Header from './Header';
@@ -21,14 +21,14 @@ export default function Home( {navigation} ) {
   return (
     <>
       <Header />
-      <View>
-        <MaterialCommunityIcons
+      <ScrollView>
+        <MaterialCommunityIcons style={styles.MaterialCommunityIcons}
           name="information"
-          size={90}
-          color="steelblue"
+          size={60}
+          color="#b1de0e"
           />
-          <Text>For scoreboard enter your name</Text>
-          <TextInput 
+          <Text style={styles.Text}>For scoreboard enter your name</Text>
+          <TextInput style={styles.TextInput}
             onChangeText={setPlayerName}
             autofocus={true}
           />
@@ -36,13 +36,13 @@ export default function Home( {navigation} ) {
           <>
             <Pressable
               onPress={() => handlePlayerName(playerName)}>
-              <Text>OK</Text>
+              <Text style={styles.Pressable}>OK</Text>
             </Pressable>
           </>
           :
           <>
-            <Text>Rules of the game</Text>
-            <Text multine="true">
+            <Text style={styles.Text}>Rules of the game</Text>
+            <Text multine="true" style={styles.Text}>
               {"\n"}
               THE GAME: Upper section of the classic Yahtzee
               dice game. You have {NBR_OF_DICES} dices and
@@ -53,15 +53,26 @@ export default function Home( {navigation} ) {
               your points from {MIN_SPOT} to {MAX_SPOT}.
               Game ends when all points have been selected.
               The order for selecting those is free.
-            </Text>
-            <Text>Good luck {playerName}</Text>
+              {"\n"}{"\n"}
+              POINTS: After each turn game calculates the sum
+              for the dices you selected. Only the dices having
+              the same spot count are calculated. Inside the
+              game you can not select same points from
+              {MIN_SPOT} to {MAX_SPOT} again. {"\n"}{"\n"}
+              GOAL: To get points as much as possible.
+              {BONUS_POINTS_LIMIT} points is the limit of
+              getting bonus which gives you {BONUS_POINTS}
+              points more.
 
-            <Pressable onPress={() => navigation.navigate('Gameboard', {player: playerName})}>
-              <Text>Play</Text>
+            </Text>
+            <Text style={styles.Text}>Good luck {playerName} {"\n"}</Text>
+
+            <Pressable style={styles.Pressable} onPress={() => navigation.navigate('Gameboard', {player: playerName})}>
+              <Text style={styles.Text}>Play</Text>
             </Pressable>
           </>
         }
-      </View>
+      </ScrollView>
       <Footer />
     </>
   )

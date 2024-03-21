@@ -77,11 +77,11 @@ export default function Gameboard({ navigation, route }) {
   }
 
   function getDiceColor(i) {
-    return selectedDices[i] ? "black" : "steelblue"
+    return selectedDices[i] ? "black" : "#b1de0e"
   }
 
   function getDicePointsColor(i) {
-    return selectedDicePoints[i] ? "black" : "steelblue"
+    return selectedDicePoints[i] ? "black" : "#b1de0e"
   }
 
   const selectDicePoints = (i) => {
@@ -132,10 +132,10 @@ function getSpotTotal(i) {
         <Container>
           <Row>{row}</Row>
         </Container>
-        <Text>Throws left: {nbrOfThrowsLeft}</Text>
-        <Text>{status}</Text>
-        <Pressable onPress={() => throwDices()}>
-          <Text>THROW DICES</Text>
+        <Text style={styles.Text}>Throws left: {nbrOfThrowsLeft}</Text>
+        <Text style={styles.Text}>{status}</Text>
+        <Pressable style={styles.Pressable} onPress={() => throwDices()}>
+          <Text style={styles.Text}>THROW DICES</Text>
         </Pressable>
         <Container>
           <Row>{pointsRow}</Row>
@@ -143,7 +143,7 @@ function getSpotTotal(i) {
         <Container>
           <Row>{pointsToSelectRow}</Row>
         </Container>
-        <Text>Player name: {playerName}</Text>
+        <Text style={styles.Text}>Player name: {playerName}</Text>
       </View>
       <Footer />
     </>

@@ -6,23 +6,22 @@ export default StyleSheet.create({
     backgroundColor: '#fff'
   },
   header: {
-    marginTop: 30,
-    marginBottom: 15,
-    backgroundColor: 'skyblue',
+    marginBottom: 5,
+    backgroundColor: '#b1de0e',
     flexDirection: 'row',
   },
   footer: {
     marginTop: 20,
-    backgroundColor: 'skyblue',
+    backgroundColor: '#b1de0e',
     flexDirection: 'row'
   },
   title: {
     color: '#fff',
     fontWeight: 'bold',
     flex: 1,
-    fontSize: 23,
+    fontSize: 18,
     textAlign: 'center',
-    margin: 10,
+    margin: 5,
   },
   author: {
     color: '#fff',
@@ -64,5 +63,31 @@ export default StyleSheet.create({
   buttonText: {
     color:"#2B2B52",
     fontSize: 20
+  },
+  TextInput: {
+    backgroundColor: "#ceced1",
+    borderColor: 'black',
+    borderWidth: 3,
+    marginLeft: 30,
+    marginRight: 30,
+    textAlign: 'center'
+  },
+  Pressable: {
+    backgroundColor: "#ceced1",
+    borderColor: 'black',
+    borderRadius: 10,
+    borderWidth: 3,
+    textAlign: 'center',
+    alignSelf: 'center', 
+    padding: 10,
+    margin: 10
+    
+  },
+  Text: {
+    textAlign: 'center',
+    fontSize: 12
+  },
+  MaterialCommunityIcons: {
+    textAlign: 'center'
   }
 });
